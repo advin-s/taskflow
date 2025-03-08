@@ -1,1 +1,25 @@
-<p>tasks works!</p>
+<div class="container">
+    <div class="row justify-content-center py-3">
+        <div class="col-12 col-md-6 col-lg-5">
+            <div class="border p-3 rounded-3">
+                <h4 class="text-center">Todo</h4>
+                <form #todoForm="ngForm" class="d-flex" (ngSubmit)="onAddTodo(todoForm)">
+                    <input type="text" class="form-control" name="todo" placeholder="Please add a todo" ngModel #todo="ngModel" required>
+                    <button class="btn btn-outline-success p-0 h-35px w-35px" type="submit" [disabled]="todo.invalid">
+                        +
+                    </button>
+                </form>
+                <div class="pt-3">
+                    @for(task of tasks; track $index){
+                        <app-task [todo]="task" [index]="$index + 1" (onComplete)="onCompleteTodo($event)" (onDeleted)="onDeleteTodo($event)"/>
+                    }
+                    @empty {
+                        <p>
+                            No Tasks found. Please add one.
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

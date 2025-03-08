@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@for $i from 10 through 35{
+    .fs-#{$i}px{
+        font-size: #{$i}px;
+    }
+    .h-#{$i}px{
+        height: #{$i}px;
+    }
+    .w-#{$i}px{
+        width: #{$i}px;
+    }
+}
