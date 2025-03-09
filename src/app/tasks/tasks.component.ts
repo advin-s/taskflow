@@ -4,11 +4,12 @@ import { TasksService } from './tasks.service';
 import { Subscription } from 'rxjs';
 import { Todo } from '../interface';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [TaskComponent, FormsModule],
+  imports: [TaskComponent, FormsModule, HeaderComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
 })
