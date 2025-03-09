@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+
+$custom-theme:(
+    "theme":rgb(2,73,80)
+);
+
+$theme-colors: map-merge($theme-colors,$custom-theme);
+
+@import '../node_modules/bootstrap/scss/bootstrap';
+
 @for $i from 10 through 35{
     .fs-#{$i}px{
         font-size: #{$i}px;
