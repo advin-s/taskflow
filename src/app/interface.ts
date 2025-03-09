@@ -4,3 +4,8 @@ export interface Todo{
     completed:boolean,
     userId:number,
 }
+
+export interface UserLogin{
+    email:string,
+    password:string,
+}
